@@ -6,8 +6,6 @@ These containers depend on the base php containers and have the mysql pdo extens
 
 The Containers rebuild every month with the (at the time) latest build on the specific version.
 
-### I only build versions above 7.4
-
 ---
 
 ## Usage

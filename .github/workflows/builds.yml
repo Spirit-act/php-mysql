@@ -50,6 +50,26 @@ jobs:
           registry: docker.io
           dockerfile: 7.4/cli/Dockerfile
 
+  build-7_4:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push Docker image
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
+          tags: 7.4
+          registry: docker.io
+          dockerfile: 7.4/plain/Dockerfile
+
   build-8_0-fpm:
     runs-on: ubuntu-latest
     steps:
@@ -90,18 +110,38 @@ jobs:
           registry: docker.io
           dockerfile: 8.0/cli/Dockerfile
 
-  build-8_1-fpm:
+  build-8_0:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         name: Check out code
-      
+
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-        
+
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push Docker image
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
+          tags: 8.0
+          registry: docker.io
+          dockerfile: 8.0/plain/Dockerfile
+
+  build-8_1-fpm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
         with:
@@ -129,3 +169,23 @@ jobs:
           tags: 8.1-cli
           registry: docker.io
           dockerfile: 8.1/cli/Dockerfile
+
+  build-8_1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push Docker image
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
+          tags: 8.1
+          registry: docker.io
+          dockerfile: 8.1/plain/Dockerfile
