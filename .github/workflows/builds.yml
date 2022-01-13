@@ -350,7 +350,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags:8.1-cli-bullseye
+          tags: 8.1-cli-bullseye
           registry: docker.io
           dockerfile: 8.1/bullseye/cli/Dockerfile
 
