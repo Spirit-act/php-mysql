@@ -1,4 +1,4 @@
-name: PHP MySQL and Redis containers
+name: PHP MySQL containers
 
 on:
   workflow_dispatch:
