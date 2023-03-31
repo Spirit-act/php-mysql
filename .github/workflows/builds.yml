@@ -202,7 +202,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-  build-8_1-fpm-alpine:
+  build-8_2-fpm-alpine:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -212,13 +212,13 @@ jobs:
         name: Build & push Docker image
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.1-fpm, 8.1-fpm-alpine, 8.1-fpm-alpine3.17
+          tags: 8.2-fpm, 8.2-fpm-alpine, 8.2-fpm-alpine3.17
           registry: docker.io
-          dockerfile: 8.1/alpine/fpm/Dockerfile
+          dockerfile: 8.2/alpine/fpm/Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-  build-8_1-fpm-bullseye:
+  build-8_2-fpm-bullseye:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -228,9 +228,9 @@ jobs:
         name: Build & push Docker image
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.1-fpm-bullseye
+          tags: 8.2-fpm-bullseye
           registry: docker.io
-          dockerfile: 8.1/bullseye/fpm/Dockerfile
+          dockerfile: 8.2/bullseye/fpm/Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
@@ -295,37 +295,5 @@ jobs:
           tags: 8.2-bullseye
           registry: docker.io
           dockerfile: 8.2/bullseye/plain/Dockerfile
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  build-8_2-fpm-alpine:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Check out code
-
-      - uses: mr-smithers-excellent/docker-build-push@master
-        name: Build & push Docker image
-        with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.2-fpm, 8.2-fpm-alpine, 8.2-fpm-alpine3.17
-          registry: docker.io
-          dockerfile: 8.2/alpine/fpm/Dockerfile
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  build-8_2-fpm-bullseye:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Check out code
-
-      - uses: mr-smithers-excellent/docker-build-push@master
-        name: Build & push Docker image
-        with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.2-fpm-bullseye
-          registry: docker.io
-          dockerfile: 8.2/bullseye/fpm/Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
