@@ -10,102 +10,6 @@ on:
     branches: [ master ]
 
 jobs:
-  build-8_0-fpm-alpine:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Check out code
-
-      - uses: mr-smithers-excellent/docker-build-push@master
-        name: Build & push Docker image
-        with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.0-fpm, 8.0-fpm-alpine, 8.0-fpm-alpine3.16
-          registry: docker.io
-          dockerfile: 8.0/alpine/fpm/Dockerfile
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  build-8_0-fpm-bullseye:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Check out code
-
-      - uses: mr-smithers-excellent/docker-build-push@master
-        name: Build & push Docker image
-        with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.0-fpm-bullseye
-          registry: docker.io
-          dockerfile: 8.0/bullseye/fpm/Dockerfile
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  build-8_0-cli-alpine:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Check out code
-
-      - uses: mr-smithers-excellent/docker-build-push@master
-        name: Build & push Docker image
-        with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.0-cli, 8.0-cli-alpine, 8.0-cli-alpine3.16
-          registry: docker.io
-          dockerfile: 8.0/alpine/cli/Dockerfile
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  build-8_0-cli-bullseye:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Check out code
-
-      - uses: mr-smithers-excellent/docker-build-push@master
-        name: Build & push Docker image
-        with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.0-cli-bullseye
-          registry: docker.io
-          dockerfile: 8.0/bullseye/cli/Dockerfile
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  build-8_0-alpine:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Check out code
-
-      - uses: mr-smithers-excellent/docker-build-push@master
-        name: Build & push Docker image
-        with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.0, 8.0-alpine, 8.0-alpine3.16
-          registry: docker.io
-          dockerfile: 8.0/alpine/plain/Dockerfile
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  build-8_0-bullseye:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Check out code
-
-      - uses: mr-smithers-excellent/docker-build-push@master
-        name: Build & push Docker image
-        with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.0-bullseye
-          registry: docker.io
-          dockerfile: 8.0/bullseye/plain/Dockerfile
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
   build-8_1-fpm-alpine:
     runs-on: ubuntu-latest
     steps:
@@ -116,7 +20,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.1-fpm, 8.1-fpm-alpine, 8.1-fpm-alpine3.17
+          tags: 8.1-fpm, 8.1-fpm-alpine, 8.1-fpm-alpine3.20
           registry: docker.io
           dockerfile: 8.1/alpine/fpm/Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -148,7 +52,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.1-cli, 8.1-cli-alpine, 8.1-cli-alpine3.17
+          tags: 8.1-cli, 8.1-cli-alpine, 8.1-cli-alpine3.20
           registry: docker.io
           dockerfile: 8.1/alpine/cli/Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -180,7 +84,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.1, 8.1-alpine, 8.1-alpine3.17
+          tags: 8.1, 8.1-alpine, 8.1-alpine3.20
           registry: docker.io
           dockerfile: 8.1/alpine/plain/Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -212,7 +116,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.2-fpm, 8.2-fpm-alpine, 8.2-fpm-alpine3.17
+          tags: 8.2-fpm, 8.2-fpm-alpine, 8.2-fpm-alpine3.20
           registry: docker.io
           dockerfile: 8.2/alpine/fpm/Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -244,7 +148,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.2-cli, 8.2-cli-alpine, 8.2-cli-alpine3.17
+          tags: 8.2-cli, 8.2-cli-alpine, 8.2-cli-alpine3.20
           registry: docker.io
           dockerfile: 8.2/alpine/cli/Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -276,7 +180,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
-          tags: 8.2, 8.2-alpine, 8.2-alpine3.17
+          tags: 8.2, 8.2-alpine, 8.2-alpine3.20
           registry: docker.io
           dockerfile: 8.2/alpine/plain/Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -295,5 +199,101 @@ jobs:
           tags: 8.2-bullseye
           registry: docker.io
           dockerfile: 8.2/bullseye/plain/Dockerfile
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+  build-8_3-fpm-alpine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@master
+        name: Build & push Docker image
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
+          tags: 8.3-fpm, 8.3-fpm-alpine, 8.3-fpm-alpine3.20
+          registry: docker.io
+          dockerfile: 8.3/alpine/fpm/Dockerfile
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+  build-8_3-fpm-bullseye:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@master
+        name: Build & push Docker image
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
+          tags: 8.3-fpm-bullseye
+          registry: docker.io
+          dockerfile: 8.3/bullseye/fpm/Dockerfile
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+  build-8_3-cli-alpine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@master
+        name: Build & push Docker image
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
+          tags: 8.3-cli, 8.3-cli-alpine, 8.3-cli-alpine3.16
+          registry: docker.io
+          dockerfile: 8.3/alpine/cli/Dockerfile
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+  build-8_3-cli-bullseye:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@master
+        name: Build & push Docker image
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
+          tags: 8.3-cli-bullseye
+          registry: docker.io
+          dockerfile: 8.3/bullseye/cli/Dockerfile
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+  build-8_3-alpine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@master
+        name: Build & push Docker image
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
+          tags: 8.3, 8.3-alpine, 8.3-alpine3.20
+          registry: docker.io
+          dockerfile: 8.3/alpine/plain/Dockerfile
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+  build-8_3-bullseye:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@master
+        name: Build & push Docker image
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/php-mysql
+          tags: 8.3-bullseye
+          registry: docker.io
+          dockerfile: 8.3/bullseye/plain/Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
