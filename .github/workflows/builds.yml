@@ -299,7 +299,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
 
-  build-8.4-fpm-alpine:
+  build-8_4-fpm-alpine:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -315,7 +315,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-  build-8.4-fpm-bullseye:
+  build-8_4-fpm-bullseye:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -331,7 +331,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-  build-8.4-cli-alpine:
+  build-8_4-cli-alpine:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -347,7 +347,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-  build-8.4-cli-bullseye:
+  build-8_4-cli-bullseye:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -363,7 +363,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-  build-8.4-alpine:
+  build-8_4-alpine:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -379,7 +379,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-  build-8.4-bullseye:
+  build-8_4-bullseye:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
