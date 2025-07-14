@@ -1,3 +1,3 @@
-FROM php:8.1-alpine3.22
+FROM php:8.4-bullseye
 
 RUN docker-php-ext-install pdo_mysql
